@@ -16,35 +16,20 @@ pipeline {
         }
 
         stage('Testing') {
-            steps {
-                bat 'npm test' 
-            }
-            post {
-                always {
-                    script {
-                        if (currentBuild.resultIsBetterOrEqualTo('SUCCESS')) {
-                            currentBuild.result = 'SUCCESS'
-                        } else {
-                            currentBuild.result = 'FAILURE'
-                        }
-                    }
-                }
-                success {
-                    emailext (
-                        subject: "Stage 'Testing' completed successfully",
-                        body: "The 'Testing' stage completed successfully.",
-                        to: 'dreamshadesnew@gmail.com'
-                    )
-                }
-                failure {
-                    emailext (
-                        subject: "Stage 'Testing' failed",
-                        body: "The 'Testing' stage failed. Check the attached log for details.",
-                        to: 'dreamshadesnew@gmail.com'
-                    )
-                }
-            }
+    steps {
+        bat 'npm test'
+    }
+    post {
+        always {
+            emailext (
+                subject: "Stage 'Testing' completed",
+                body: "The 'Testing' stage has completed. Check Jenkins for details.",
+                to: 'dreamshadesnew@gmail.com'
+            )
         }
+    }
+}
+
 
 
         stage('Code Analysis') {
