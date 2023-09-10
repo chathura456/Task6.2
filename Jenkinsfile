@@ -16,10 +16,12 @@ pipeline {
                     script {
                         currentBuild.result = currentBuild.result ?: 'SUCCESS'
                     }
-                    mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Result of Unit and Integration Tests: ${currentBuild.result}",
-                         body: "The Unit and Integration Tests stage finished with status: ${currentBuild.result}. Check logs at ${env.BUILD_URL}",
-                         attachLog: true
+                    emailext (
+                        to: 'dreamshadesnew@gmail.com',
+                        subject: "Result of Unit and Integration Tests: ${currentBuild.result}",
+                        body: "The Unit and Integration Tests stage finished with status: ${currentBuild.result}. Check logs at ${env.BUILD_URL}",
+                        attachmentsPattern: '**/build.log'
+                    )
                 }
             }
         }
@@ -37,10 +39,12 @@ pipeline {
                     script {
                         currentBuild.result = currentBuild.result ?: 'SUCCESS'
                     }
-                    mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Result of Security Scan: ${currentBuild.result}",
-                         body: "The Security Scan stage finished with status: ${currentBuild.result}. Check logs at ${env.BUILD_URL}",
-                         attachLog: true
+                    emailext (
+                        to: 'dreamshadesnew@gmail.com',
+                        subject: "Result of Security Scan: ${currentBuild.result}",
+                        body: "The Security Scan stage finished with status: ${currentBuild.result}. Check logs at ${env.BUILD_URL}",
+                        attachmentsPattern: '**/build.log'
+                    )
                 }
             }
         }
