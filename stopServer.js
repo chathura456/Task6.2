@@ -6,7 +6,7 @@ const options = {
     path: '/shutdown'
 };
 
-http.get(options, (res) => {
+http.get(options, () => {
     console.log('Server shutdown request sent.');
     process.exit(0);
 }).on('error', (err) => {

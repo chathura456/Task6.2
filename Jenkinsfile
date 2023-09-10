@@ -11,26 +11,21 @@ pipeline {
         stage('Start Server') {
             steps {
                 bat 'start npm start'
-                sleep 10  // Give the server some time to start
+                sleep 10  
             }
         }
 
         stage('Testing') {
             steps {
-                bat 'npm test'  // Assuming you have tests set up
+                bat 'npm test' 
             }
         }
 
-        stage('Stop Server') {
-    steps {
-        bat 'npm stop'
-    }
-}
 
         stage('Code Analysis') {
             steps {
                 echo 'Code Analysis...'
-                // Add any build steps specific to your project here
+                
             }
         }
 
@@ -54,5 +49,11 @@ pipeline {
                 // Add any deploy steps specific to your project here
             }
         }
+
+        stage('Stop Server') {
+    steps {
+        bat 'npm stop'
+    }
+}
     }
 }
