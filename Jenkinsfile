@@ -25,14 +25,14 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 echo 'Code Analysis...'
-                
+                bat 'npm run lint'
             }
         }
 
         stage('Security Scan') {
             steps {
                 echo 'Security Scan...'
-                // Add any deploy steps specific to your project here
+                bat 'npm audit'
             }
         }
 
