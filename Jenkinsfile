@@ -1,44 +1,3 @@
-/*
-pipeline {
-    agent any 
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm 
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm install'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                bat 'npm test'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building the project...'
-                // Add any build steps specific to your project here
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project...'
-                // Add any deploy steps specific to your project here
-            }
-        }
-    }
-}
-*/
-
-
 pipeline {
     agent any 
 
@@ -46,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'npm install'
+                bat 'npm start'
             }
         }
 
