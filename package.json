@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "mocha ./test/*.test.js"
+    "test": "mocha ./test/*.test.js",
+    "stop": "node stopServer.js"
 }
+
 }

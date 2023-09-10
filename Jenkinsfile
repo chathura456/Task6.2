@@ -23,11 +23,9 @@ pipeline {
 
         stage('Stop Server') {
     steps {
-        // This will find the process running on port 3000 (typically your Express server) and kill it
-        bat 'FOR /F "tokens=5" %%a IN (\'netstat -aon ^| find "3000" ^| find "LISTENING"\') DO taskkill /f /pid %%a'
+        bat 'npm stop'
     }
 }
-
 
         stage('Code Analysis') {
             steps {
