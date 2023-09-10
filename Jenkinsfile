@@ -64,14 +64,14 @@ pipeline {
         stage('Integration Tests') {
             steps {
                 echo 'Integration Tests...'
-                // Add any deploy steps specific to your project here
+                
             }
         }
 
         stage('Deploy to Production') {
             steps {
                 echo 'Deploying the project...'
-                // Add any deploy steps specific to your project here
+            
             }
         }
 
