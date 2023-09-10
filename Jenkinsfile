@@ -33,16 +33,14 @@ pipeline {
                     emailext (
                         subject: "Stage 'Testing' completed successfully",
                         body: "The 'Testing' stage completed successfully.",
-                        to: 'dreamshadesnew@gmail.com',
-                        attachLog: true
+                        to: 'dreamshadesnew@gmail.com'
                     )
                 }
                 failure {
                     emailext (
                         subject: "Stage 'Testing' failed",
                         body: "The 'Testing' stage failed. Check the attached log for details.",
-                        to: 'dreamshadesnew@gmail.com',
-                        attachLog: true
+                        to: 'dreamshadesnew@gmail.com'
                     )
                 }
             }
