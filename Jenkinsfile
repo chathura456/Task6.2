@@ -23,7 +23,7 @@ pipeline {
             }
             post {
                 success {
-                    email to: 'dreamshadesnew@gmail.com',
+                    mail to: 'dreamshadesnew@gmail.com',
                         subject: "Testing completed successfully",
                         body: "Testing stage completed successfully.",
                         attachmentsPattern: "**/test-results.xml"
