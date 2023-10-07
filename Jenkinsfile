@@ -20,24 +20,10 @@ pipeline {
                 bat 'npm test' 
             }
             post {
-                always {
-                    script {
-                        if (currentBuild.resultIsBetterOrEqualTo('SUCCESS')) {
-                            currentBuild.result = 'SUCCESS'
-                        } else {
-                            currentBuild.result = 'FAILURE'
-                        }
-                    }
-                }
                 success {
                     mail to: 'dreamshadesnew@gmail.com',
-                    subject: "Testing completed successfully",
-                    body: "Testing stage completed successfully."
-                }
-                failure {
-                    mail to: 'dreamshadesnew@gmail.com',
-                    subject: "Stage Testing failed",
-                    body: "The Testing stage failed. Check the attached log for details.",
+                         subject: "Testing completed successfully",
+                         body: "Testing stage completed successfully."
                 }
             }
         }
