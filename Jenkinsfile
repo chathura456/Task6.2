@@ -30,18 +30,14 @@ pipeline {
                     }
                 }
                 success {
-                    emailext (
                         subject: "Stage 'Testing' completed successfully",
                         body: "The 'Testing' stage completed successfully.",
-                        to: 'dreamshadesnew@gmail.com'
-                    )
+                        mail to: 'dreamshadesnew@gmail.com'
                 }
                 failure {
-                    emailext (
                         subject: "Stage 'Testing' failed",
                         body: "The 'Testing' stage failed. Check the attached log for details.",
-                        to: 'dreamshadesnew@gmail.com'
-                    )
+                        mail to: 'dreamshadesnew@gmail.com'
                 }
             }
         }
@@ -70,8 +66,7 @@ pipeline {
 
         stage('Deploy to Production') {
             steps {
-                echo 'Deploying the project...'
-            
+                echo 'Deploying the project...'      
             }
         }
 
