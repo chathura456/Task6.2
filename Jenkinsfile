@@ -25,6 +25,11 @@ pipeline {
                          subject: "Testing completed successfully",
                          body: "Testing stage completed successfully."
                 }
+                failure {
+                    mail to: 'dreamshadesnew@gmail.com',
+                         subject: "Stage Testing failed",
+                         body: "The Testing stage failed. Check the attached log for details."
+                }
             }
         }
 
