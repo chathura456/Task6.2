@@ -23,12 +23,10 @@ pipeline {
             }
             post {
                 success {
-                    emailext(
-                        to: 'dreamshadesnew@gmail.com',
+                    email to: 'dreamshadesnew@gmail.com',
                         subject: "Testing completed successfully",
                         body: "Testing stage completed successfully.",
                         attachmentsPattern: "**/test-results.xml"
-                    )
                 }
                 failure {
                     emailext(
