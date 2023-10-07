@@ -30,14 +30,14 @@ pipeline {
                     }
                 }
                 success {
-                    subject: "Stage 'Testing' completed successfully",
-                    body: "The 'Testing' stage completed successfully.",
-                    mail to: 'dreamshadesnew@gmail.com'
+                    mail to: 'dreamshadesnew@gmail.com',
+                    subject: "Testing completed successfully",
+                    body: "Testing stage completed successfully."
                 }
                 failure {
-                    subject: "Stage 'Testing' failed",
-                    body: "The 'Testing' stage failed. Check the attached log for details.",
-                    mail to: 'dreamshadesnew@gmail.com'
+                    mail to: 'dreamshadesnew@gmail.com',
+                    subject: "Stage Testing failed",
+                    body: "The Testing stage failed. Check the attached log for details.",
                 }
             }
         }
