@@ -31,7 +31,7 @@ pipeline {
                 }
                 success {
                     mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Testing completed successfully",
+                         subject: "Test completed successfully",
                          body: "Testing stage completed successfully."
                 }
                 failure {
