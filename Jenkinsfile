@@ -30,18 +30,17 @@ pipeline {
                     }
                 }
                 success {
-                        subject: "Stage 'Testing' completed successfully",
-                        body: "The 'Testing' stage completed successfully.",
-                        mail to: 'dreamshadesnew@gmail.com'
+                    subject: "Stage 'Testing' completed successfully",
+                    body: "The 'Testing' stage completed successfully.",
+                    mail to: 'dreamshadesnew@gmail.com'
                 }
                 failure {
-                        subject: "Stage 'Testing' failed",
-                        body: "The 'Testing' stage failed. Check the attached log for details.",
-                        mail to: 'dreamshadesnew@gmail.com'
+                    subject: "Stage 'Testing' failed",
+                    body: "The 'Testing' stage failed. Check the attached log for details.",
+                    mail to: 'dreamshadesnew@gmail.com'
                 }
             }
         }
-
 
         stage('Code Analysis') {
             steps {
@@ -60,7 +59,6 @@ pipeline {
         stage('Integration Tests') {
             steps {
                 echo 'Integration Tests...'
-                
             }
         }
 
@@ -71,10 +69,10 @@ pipeline {
         }
 
         stage('Stop Server') {
-    steps {
-       // bat 'npm stop'
-        echo 'Stop Server...'
-    }
-}
+            steps {
+                // bat 'npm stop'
+                echo 'Stop Server...'
+            }
+        }
     }
 }
