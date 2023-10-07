@@ -17,18 +17,26 @@ pipeline {
 
         stage('Testing') {
             steps {
-                bat 'npm test' 
+                bat 'npm test'
+                // Archive the generated test-results.xml
+                archiveArtifacts artifacts: 'test-results.xml', allowEmptyArchive: true
             }
             post {
                 success {
-                    mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Testing completed successfully",
-                         body: "Testing stage completed successfully."
+                    emailext(
+                        to: 'dreamshadesnew@gmail.com',
+                        subject: "Testing completed successfully",
+                        body: "Testing stage completed successfully.",
+                        attachmentsPattern: "**/test-results.xml"
+                    )
                 }
                 failure {
-                    mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Stage Testing failed",
-                         body: "The Testing stage failed. Check the attached log for details."
+                    emailext(
+                        to: 'dreamshadesnew@gmail.com',
+                        subject: "Stage Testing failed",
+                        body: "The Testing stage failed. Check the attached log for details.",
+                        attachmentsPattern: "**/test-results.xml"
+                    )
                 }
             }
         }

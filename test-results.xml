@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.004" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-10-07T22:39:46" tests="0" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Sample Test" timestamp="2023-10-07T22:39:46" tests="1" file="F:\Assignments\Completed\Proof IT 3 Assignments\6.2\Github Repo\Pipeline Definition\test\app.test.js" time="0.000" failures="0">
+    <testcase name="Sample Test should always pass" time="0.001" classname="should always pass">
+    </testcase>
+  </testsuite>
+  <testsuite name="Arithmetic Operations" timestamp="2023-10-07T22:39:46" tests="4" file="F:\Assignments\Completed\Proof IT 3 Assignments\6.2\Github Repo\Pipeline Definition\test\app.test.js" time="0.002" failures="0">
+    <testcase name="Sample Test Arithmetic Operations should correctly add two numbers" time="0.000" classname="should correctly add two numbers">
+    </testcase>
+    <testcase name="Sample Test Arithmetic Operations should correctly subtract two numbers" time="0.000" classname="should correctly subtract two numbers">
+    </testcase>
+    <testcase name="Sample Test Arithmetic Operations should correctly multiply two numbers" time="0.000" classname="should correctly multiply two numbers">
+    </testcase>
+    <testcase name="Sample Test Arithmetic Operations should correctly divide two numbers" time="0.000" classname="should correctly divide two numbers">
+    </testcase>
+  </testsuite>
+  <testsuite name="String Manipulations" timestamp="2023-10-07T22:39:46" tests="3" file="F:\Assignments\Completed\Proof IT 3 Assignments\6.2\Github Repo\Pipeline Definition\test\app.test.js" time="0.000" failures="0">
+    <testcase name="Sample Test String Manipulations should correctly concatenate two strings" time="0.000" classname="should correctly concatenate two strings">
+    </testcase>
+    <testcase name="Sample Test String Manipulations should return string length" time="0.000" classname="should return string length">
+    </testcase>
+    <testcase name="Sample Test String Manipulations should convert string to uppercase" time="0.000" classname="should convert string to uppercase">
+    </testcase>
+  </testsuite>
+</testsuites>
